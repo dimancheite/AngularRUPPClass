@@ -1,0 +1,25 @@
+
+  <h1>{{ title }}</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let product of products; let ind = index">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <a routerLink = "/product/edit/{{ product.id }}">Edit</a>
+          | 
+          <span (click) = "deleteProduct(product.id, ind)">Delete</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
